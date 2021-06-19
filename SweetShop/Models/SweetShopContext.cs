@@ -6,10 +6,9 @@ namespace SweetShop.Models
 {
   public class SweetShopContext : IdentityDbContext<ApplicationUser>
   {
-    public virtual DbSet<Author> Authors { get; set; }
-    public DbSet<Book> Books { get; set; }
-    public DbSet<AuthorBook> AuthorBook { get; set; }
-    public DbSet<Patron> Patrons { get; set; }
+    public virtual DbSet<Treat> Treats { get; set; }
+    public DbSet<Flavor> Flavors { get; set; }
+    public DbSet<TreatFlavor> TreatBook { get; set; }
 
     public SweetShopContext(DbContextOptions options) : base(options) { }
 

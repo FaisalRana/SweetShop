@@ -4,25 +4,41 @@
 @using SweetShop.Models;
 
 <h1>Welcome to the Sweet Shop!</h1>
-<h2>Heres a list of sweets (Please select to see details</h2>
+<p>Heres a list of treats (Please make a selsection to see details)</p>
 
 
-<h1>Sweets</h1>
+<h1>Treats</h1>
 
-@if (@Viewbag.AllSweets.Count == 0)
+@if (@ViewBag.AllTreats.Count == 0)
 {
-  <h3>No sweets have been added yet!</h3>
+  <h3>No treats have been added yet!</h3>
+  <p>@Html.ActionLink("Add new Treat", "Create", "Treat")</p>
 }
 
 <ul>
-  @foreach (Sweet sweet in Viewbag.AllSweets)
+  @foreach (Treat treat in @ViewBag.AllTreats)
   {
-    <li>@Html.ActionLink($"{sweet.Name}", "Details", new { id = sweet.SweetId })</li>
+    <li>@Html.ActionLink($"{treat.Name}", "Details", new { id = treat.TreatId })</li>
+  }
+</ul>
+
+<h1>Flavors</h1>
+
+@if (@ViewBag.AllFlavors.Count == 0)
+{
+  <h3>No flavors have been added yet!</h3>
+  <p>@Html.ActionLink("Add new Flavor", "Create", "Flavor")</p>
+}
+
+<ul>
+  @foreach (Flavor flavor in @ViewBag.AllFlavors)
+  {
+    <li>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId })</li>
   }
 </ul>
 
 
-<p>@Html.ActionLink("See all Sweets", "Index", "Sweets")</p>
+<p>@Html.ActionLink("See all Treats", "Index", "Treats")</p>
 <p>@Html.ActionLink("See all Flavors", "Index", "Flavors")</p>
 
 @if (User.Identity.IsAuthenticated)
@@ -32,17 +48,9 @@
         <input type="submit" class="btn btn-default" value="Log out" />
     }
 } else 
-<p>No user is signed in. Select option to continue:</p>
+
 {
-   @using (Html.BeginForm("Register", "Account"))
-    {
-        <input type="submit" class="btn btn-default" value="Register" />
-    }
-   @using (Html.BeginForm("Login", "Account"))
-    {
-        <input type="submit" class="btn btn-default" value="Login" />
-    }
+  <p>No user is signed in. Select option to continue:</p>
 
-
-<p>@Html.ActionLink("Login to exsiting account", "Login", "Account")</p>
+  <p>@Html.ActionLink("Create an account", "Index", "Account")</p>
 }

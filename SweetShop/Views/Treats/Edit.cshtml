@@ -1,28 +1,28 @@
-@* @{
+@{
   Layout = "_Layout";
 }
-@using Factory.Models;
-@model Factory.Models.Engineer
+@using SweetShop.Models;
+@model SweetShop.Models.Treat
 
-<h2>edit employee details</h2>
+<h2>Edit Treat Details:</h2>
 
 <hr />
-<h3>@Html.DisplayFor(model => model.EngineerName)</h3>
+<h3>@Html.DisplayFor(model => model.Name)</h3>
 <br>
 
 @using (Html.BeginForm())
 {
-  @Html.HiddenFor(model => model.EngineerId)
+  @Html.HiddenFor(model => model.TreatId)
   @Html.Label("Change Name")
-  @Html.EditorFor(model => model.EngineerName)
+  @Html.EditorFor(model => model.Name)
 
-  @Html.Label("Edit Assigned Machine")
-  @Html.DropDownList("MachineId")
+  @Html.Label("Edit Assigned Flavor")
+  @Html.DropDownList("FlavorId")
 
   <br>
   <br>
   <input type="submit" value="Submit" required="true" />
 }
 <ul>
-  <li>@Html.ActionLink("back to engineers list", "Index")</li>
-</ul> *@
+  <li>@Html.ActionLink("back to Home", "Index", "Home")</li>
+</ul>

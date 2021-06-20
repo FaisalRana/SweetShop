@@ -18,6 +18,7 @@
   @foreach (Treat treat in @ViewBag.AllTreats)
   {
     <li>@Html.ActionLink($"{treat.Name}", "Details", "Treats", new { id = treat.TreatId })</li>
+          
   }
     <p>@Html.ActionLink("Add new Treat", "Create", "Treats")</p>
 </ul>
@@ -33,7 +34,7 @@
 <ul>
   @foreach (Flavor flavor in @ViewBag.AllFlavors)
   {
-    <li>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId })</li>
+    <li>@Html.ActionLink($"{flavor.Name}", "Details", "Flavors", new { id = flavor.FlavorId })</li>
   }
   <p>@Html.ActionLink("Add new Flavor", "Create", "Flavors")</p>
 </ul>

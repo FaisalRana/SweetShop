@@ -38,7 +38,7 @@ This webpage must have the following functionality:
 * _Download Visual Studio Code Installation_
 * _Open the terminal on your local machine_
 * _Navigate to the project root directory_
-* _Clone this project with the following command  `$ git clone <https://github.com/FaisalRana/SillyStringz.Solution.git>`_
+* _Clone this project with the following command  `$ git clone <https://github.com/FaisalRana/SweetShop.git>`_
 * _Download and install .NET Core through this link if you don't already have it: https://dotnet.microsoft.com/download_
 * _Open this project in Visual Studio Code with the command `$ code .`_
 * _Navigate to the `SweetShop` directory and create an **appsettings.json** file and input the following script. 

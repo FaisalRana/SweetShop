@@ -87,5 +87,19 @@ namespace SweetShop.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index", "Home");
     }
+    public ActionResult Edit(int id)
+    {
+      ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Name");
+      Treat thisTreat = _db.Treats.FirstOrDefault(Treat => Treat.TreatId == id);
+      return View(thisTreat);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Treat Treat)
+    {
+      _db.Entry(Treat).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Details", new { id = Treat.TreatId });
+    }
   }
 }

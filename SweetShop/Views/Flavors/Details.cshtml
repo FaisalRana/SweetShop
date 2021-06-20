@@ -1,0 +1,33 @@
+@{
+  Layout = "_Layout";
+}
+@model SweetShop.Models.Flavor
+<h2>Flavor details</h2>
+<hr />
+@if (@Model.JoinEntities.Count == 0)
+{
+  <p>This Flavor does not have any treats associated with it </p>
+  <li>@Html.ActionLink("Assign a Treat to repair", "AddTreat", new {id = Model.FlavorId })</li>
+}
+else
+{
+  <h3>Here is a list of treats associated with this flavor:</h3>
+  <ul>
+  @foreach (var join in Model.JoinEntities)
+    {
+      <li>@join.Treat.Name </li>
+      @using (Html.BeginForm("DeleteTreat", "Flavors"))
+      {
+        @Html.Hidden("joinId", @join.TreatFlavorId)
+        <input type="submit" value="delete" />
+        <li>@Html.ActionLink("Add additional Treat", "AddTreat", new {id = Model.FlavorId })</li>
+      }
+    }
+  </ul>
+}
+</br>
+<ul>
+  <li>@Html.ActionLink("Edit this Flavor", "Edit", new { id = Model.FlavorId })</li>
+  <li>@Html.ActionLink("Delete this Flavor", "Delete", new { id = Model.FlavorId })</li>
+  <li>@Html.ActionLink("Return to home", "Index", "Home")</li>
+</ul>

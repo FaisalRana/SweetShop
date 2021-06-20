@@ -8,7 +8,7 @@ namespace SweetShop.Models
   {
     public virtual DbSet<Treat> Treats { get; set; }
     public DbSet<Flavor> Flavors { get; set; }
-    public DbSet<TreatFlavor> TreatBook { get; set; }
+    public DbSet<TreatFlavor> TreatFlavors { get; set; }
 
     public SweetShopContext(DbContextOptions options) : base(options) { }
 

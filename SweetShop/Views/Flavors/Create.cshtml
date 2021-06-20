@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@model SweetShop.Models.Flavor
+
+<h4>Add a new Flavor</h4>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+
+  @Html.Label("Assign Flavor to Treat:")
+  @Html.DropDownList("TreatId")
+
+  <input type="submit" value="Add new Flavor" />
+}
+<p>@Html.ActionLink("Home", "Index", "Home")</p> 

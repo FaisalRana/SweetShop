@@ -1,0 +1,28 @@
+@* @{
+  Layout = "_Layout";
+}
+@using Factory.Models;
+@model Factory.Models.Engineer
+
+<h2>edit employee details</h2>
+
+<hr />
+<h3>@Html.DisplayFor(model => model.EngineerName)</h3>
+<br>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.EngineerId)
+  @Html.Label("Change Name")
+  @Html.EditorFor(model => model.EngineerName)
+
+  @Html.Label("Edit Assigned Machine")
+  @Html.DropDownList("MachineId")
+
+  <br>
+  <br>
+  <input type="submit" value="Submit" required="true" />
+}
+<ul>
+  <li>@Html.ActionLink("back to engineers list", "Index")</li>
+</ul> *@

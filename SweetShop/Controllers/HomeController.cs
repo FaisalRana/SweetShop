@@ -22,7 +22,6 @@ namespace SweetShop.Controllers
       _db = db;
     }
 
-
     [HttpGet("/")]
     public ActionResult Index()
     {

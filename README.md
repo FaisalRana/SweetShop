@@ -1,4 +1,4 @@
-# Pierrs's SweetShop SweetShop
+# Pierrs's SweetShop 
 
 ### Epicodus Independent Code Review - Identity and Authentication
 
@@ -62,9 +62,9 @@ This webpage must have the following functionality:
 2. Use the command `dotnet ef migrations iniital` and  `dotnet ef database update` to create database migration. 
 
 
-## Diagram of the Many-To-Many relationship used in this project
+## Diagram an example Many-To-Many relationship
 
-![Image of SQL Designer](SweetShop/wwwroot/images/schema.png)
+![Image of SQL Designer](SweetShop/wwwroot/images/schema.png) 
 
 
 ## User Stories 

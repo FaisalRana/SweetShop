@@ -10,9 +10,6 @@
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name)
 
-  @Html.Label("Assign Flavor to Treat:")
-  @Html.DropDownList("TreatId")
-
-  <input type="submit" value="Add new Flavor" />
+  <input type="submit" value="Add new Flavor" /> // how can I make a drop down list with a default nullable item like <no flavor>
 }
 <p>@Html.ActionLink("Home", "Index", "Home")</p> 
